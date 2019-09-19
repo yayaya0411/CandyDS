@@ -2,10 +2,18 @@ import json
 import pandas as pd
 
 def arrange_df(df,y,drops):
-    """ separate dataframe into X y
-    df : dataframe
-    y : target varable
-    drops : columns to drop
+    """
+    separate dataframe into X y
+
+    Args:
+    ----------
+        df : dataframe
+        y : target varable
+        drops : columns to drop
+    Return:
+    ----------
+        X : Train varable
+        y : target varable
     """
     drops.append(y)
     X = df.drop(columns = drops)
@@ -13,10 +21,17 @@ def arrange_df(df,y,drops):
     return X,y
 
 def load_json(file,df = False,orient='split'):
-    """ load json file
-    file : json file
-    df : boolean transform to dataframe
-    orient : orient for json
+    """
+    load json file
+
+    Args:
+    ----------
+        file : json file
+        df : boolean transform to dataframe
+        orient : orient for json
+    Return:
+    ----------
+        jf : json
     """
     if df:
         jf = pd.read_json(file,orient=orient)
