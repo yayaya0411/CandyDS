@@ -22,13 +22,7 @@ from sklearn.metrics import auc,roc_auc_score,roc_curve,classification_report
 #plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
 print("import package done")
 
-# change working directory path
-work_path = os.path.join(os.environ["HOMEDRIVE"],os.environ["HOMEPATH"],"DESKTOP","py_fun")
-os.chdir(work_path)
-print("working directory : " + work_path)
-
 # load titanic data
-
 titanic = pd.read_csv('https://raw.githubusercontent.com/yayaya0411/pretools/master/data/titanic/train.csv')
 drop = ["PassengerId","Ticket","Name"]
 X,y = sitetool.arrange_df(titanic,y="Survived",drops=drop)
@@ -62,10 +56,7 @@ y_pred_rf = model_rf.predict(X)
 # class & number need use different metrics method
 metrics.clf_metrics(y,y_pred_rf)
 metrics.reg_metrics(y,y_pred_rf)
-
 metrics.clf_report(y,y_pred_rf)
-roc_auc_score(y,y_pred_rf)
-
 print(classification_report(y,y_pred_rf))
 
 # save model
