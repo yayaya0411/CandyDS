@@ -1,5 +1,3 @@
-## Some handy tools for my regular work
-----------------------------------------------------------------
 examples
 
 ```py
